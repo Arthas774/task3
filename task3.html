@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+    <style>
+        /* Выберите все абзацы <p> внутри дивов <div> */
+        div p {
+            color: blue;
+        }
+
+        /* Выберите все <h2> внутри дивов <div> */
+        div h2 {
+            color: green;
+        }
+
+        /* Выберите все абзацы <p> из элемента с id=test */
+        #test p {
+            color: red;
+        }
+
+        /* Выберите все <h2> из элемента с id=test */
+        #test h2 {
+            color: purple;
+        }
+
+        /* Выберите все элементы с классом bbb */
+        .bbb {
+            font-weight: bold;
+        }
+
+        /* Выберите все элементы с классом bbb из элемента с id=test */
+        #test .bbb {
+            font-style: italic;
+        }
+
+        /* Выберите все абзацы <p> с классом bbb */
+        p.bbb {
+            text-decoration: underline;
+        }
+
+        /* Выберите все <h2> с классом bbb */
+        h2.bbb {
+            text-transform: uppercase;
+        }
+
+        /* Выберите все абзацы <p> с классом bbb из элемента с id=test */
+        #test p.bbb {
+            background-color: yellow;
+        }
+
+        /* Выберите все <h2> внутри дивов <div> и одновременно все абзацы <p> */
+        div h2,
+        div p {
+            border: 1px solid black;
+        }
+
+        /* Выберите все элементы с классом bbb и элементы с классом xxx одновременно */
+        .bbb,
+        .xxx {
+            margin: 10px;
+        }
+
+        /* Выберите все абзацы <p> с классом bbb и <h2> с классом xxx одновременно */
+        p.bbb,
+        h2.xxx {
+            padding: 5px;
+        }
+
+        /* Выберите все абзацы <p> с классом bbb из id=test и все абзацы <p> с классом xxx из id=test одновременно */
+        #test p.bbb,
+        #test p.xxx {
+            color: orange;
+        }
+
+        /* Выберите все элементы из класса fff */
+        .fff {
+            border: 2px dashed blue;
+        }
+
+        /* Выберите все абзацы <p> из класса fff */
+        .fff p {
+            color: brown;
+        }
+
+        /* Выберите все абзацы <p> с классом fff */
+        p.fff {
+            font-size: 20px;
+        }
+
+        /* Выберите все элементы с классом bbb из класса fff */
+        .fff .bbb {
+            background-color: lightgray;
+        }
+
+        /* Выберите все <h2> с классом bbb из класса fff */
+        .fff h2.bbb {
+            text-align: center;
+        }
+
+        /* Выберите все ссылки из id=test, состояние link и visited сделайте неподчеркнутыми и красными, а состояние hover - подчеркнутым и голубым */
+        #test a:link,
+        #test a:visited {
+            text-decoration: none;
+            color: red;
+        }
+
+        #test a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        /* Выберите все ссылки с классом www, состояние link и visited сделайте подчеркнутыми и голубыми, а состояние hover - неподчеркнутым */
+        a.www:link,
+        a.www:visited {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        a.www:hover {
+            text-decoration: none;
+        }
+
+        /* Выберите все ссылки из id=test с классом www. Цвета состояний выберите самостоятельно */
+        #test a.www:link {
+            color: green;
+        }
+
+        #test a.www:visited {
+            color: purple;
+        }
+
+        #test a.www:hover {
+            color: orange;
+        }
+
+        /* Выберите все ссылки из class="eee" с классом www. Цвета состояний выберите самостоятельно */
+        .eee a.www:link {
+            color: pink;
+        }
+
+        .eee a.www:visited {
+            color: teal;
+        }
+
+        .eee a.www:hover {
+            color: maroon;
+        }
+
+        /* Выберите все <i>, которые лежат непосредственно внутри <p> (дочерний селектор >) */
+        p>i {
+            color: darkred;
+        }
+
+        /* Выберите все <li>, которые лежат непосредственно внутри <ul> (дочерний селектор >) */
+        ul>li {
+            list-style-type: square;
+        }
+
+        /* Выберите все <a>, которые лежат непосредственно внутри <p> и одновременно все <a> с классом test (дочерний селектор >) */
+        p>a,
+        a.test {
+            color: navy;
+        }
+
+        /* Выберите все <i>, которые лежат непосредственно после <b> (соседний селектор +) */
+        b+i {
+            color: lime;
+        }
+
+        /* Выберите все <i>, которые лежат непосредственно после <b> из элемента с id=test (соседний селектор +) */
+        #test b+i {
+            color: magenta;
+        }
+
+        /* Выберите все абзацы <p>, следующие сразу после элемента <ul> (соседний селектор +) */
+        ul+p {
+            color: cyan;
+        }
+
+        /* Выберите все абзацы <p>, идущие после элемента <h1> (родственный селектор ~) */
+        h1~p {
+            color: olive;
+        }
+
+        /* Выберите все абзацы <p>, идущие после элемента <h2> из элемента с id=test (родственный селектор ~) */
+        #test h2~p {
+            color: coral;
+        }
+
+        /* Выберите все <i>, лежащие внутри любых элементов, лежащих внутри абзаца <p> */
+        p * i {
+            color: indigo;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+
+        <p class="bbb">Абзац с классом bbb</p>
+        <h2 class="bbb">Заголовок с классом bbb</h2>
+        <p class="xxx">Абзац с классом xxx</p>
+        <h2 class="xxx">Заголовок с классом xxx</h2>
+        <a href="#" class="www">Ссылка с классом www</a>
+        <b>Жирный текст</b>
+        <i>Курсивный текст</i>
+        <ul>
+            <li>Элемент списка 1</li>
+            <li>Элемент списка 2</li>
+        </ul>
+        <p>Абзац после ul</p>
+        <h1>Заголовок 1</h1>
+        <p>Абзац после h1</p>
+        <h2>Заголовок 2</h2>
+        <p>Абзац после h2</p>
+        <p><i>Курсив внутри p</i></p>
+    </div>
+
+    <div class="fff">
+
+        <p>Абзац внутри fff</p>
+        <p class="fff">Абзац с классом fff</p>
+        <div class="bbb">Блок с классом bbb внутри fff</div>
+        <h2 class="bbb">Заголовок с классом bbb внутри fff</h2>
+    </div>
+
+    <div class="eee">
+
+        <a href="#" class="www">Ссылка с классом www внутри eee</a>
+    </div>
+</body>
+
+</html>
